@@ -88,14 +88,12 @@ def estereo2mono(ficEste, ficMono, canal=2):
 
 
 ## 2: De mono a estereo
-def mono2estereo(ficIzq, ficDer, ficEste):
-        
+def mono2estereo(ficIzq, ficDer, ficEste):      
     '''
     Lee los ficheros ficIzq y ficDer, que contienen las señales monofónicas correspondientes a los canales
     izquierdo y derecho, respectivamente, y construye con ellas una señal estéreo que almacena en el fichero
     ficEste.
     '''
-
     signalIzq, sampleRate = leeWave(ficIzq)
     signalDer, sampleRate = leeWave(ficDer)
     writeWave(ficEste, [*signalIzq, *signalDer], sampleRate)
